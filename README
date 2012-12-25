@@ -1,0 +1,16 @@
++-------------+
+| Interceptor |
++-------------+
+
++-------------+
+| 12/2012     |
+| Swan Rocher |
++-------------+
+
++--------------------------------------------------------+
+| popen2 is similar to popen but it also redirects stdin |
+| while ptyopen is more powerfull since it can redirect  |
+| processes which does not agree (eg which need a tty to |
+| be executed).                                          |
++--------------------------------------------------------+
+
