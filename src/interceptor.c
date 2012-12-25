@@ -70,6 +70,6 @@ int ptyopen(const char* cmd, int* fd) {
 		close(fd_slave);
 		*fd = fd_master;
 	}
-	return 0;
+	return pid;
 }
 
