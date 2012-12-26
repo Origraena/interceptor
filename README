@@ -14,3 +14,10 @@
 | be executed).                                          |
 +--------------------------------------------------------+
 
++----HowTo----------------------------------------------------------------------------------------+
+| compile shared library with build_lib.sh                                                        |
+| make a symlink into your project to the library binary (target/release/libinterceptor.so.1.0.1) |
+| make another symlink to the src/interceptor.h in some directory in your LD_LIBRARY_PATH         |
+| compile your project with -linterceptor -lutil (ld step)                                        |
++-------------------------------------------------------------------------------------------------+
+
