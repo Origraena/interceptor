@@ -9,9 +9,6 @@
 int main(int argc, char** argv) {
 	int fd_master,fd_log;
 	const char* cmd = "/usr/games/nethack";
-	char buffer[2];
-	buffer[0] = ' ';
-	buffer[1] = '\0';
 	char c;
 	int running = 1;
 
