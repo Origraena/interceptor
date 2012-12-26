@@ -9,10 +9,16 @@ int main(int argc, char** argv) {
 	char buffer[2];
 	buffer[0] = ' ';
 	buffer[1] = '\0';
+	char c;
 
 	if (ptyopen(cmd,&fd_master) < 0) {
 		perror("ptyopen");
 		return -1;
+	}
+
+	if (setvbuf(stdin,&c,_IONBF,sizeof(char)) < 0) {
+		perror("setvbuf"); 
+		return -2;      // TODO clean
 	}
 
 	while (1) {
@@ -34,11 +40,19 @@ int main(int argc, char** argv) {
 		}
 
 		if (FD_ISSET(FD_STDIN,&fds)) {
-			if (read(FD_STDIN,buffer,sizeof(char)) < 0) {
+/*			if (read(FD_STDIN,buffer,sizeof(char)) < 0) {
 				perror("read");
 				break;
 			}
 			if (write(fd_master,buffer,sizeof(char)) < 0) {
+				perror("write");
+				break;
+			}*/
+			if (read(FD_STDIN,&c,sizeof(char)) < 0) {
+				perror("read");
+				break;
+			}
+			if (write(fd_master,&c,sizeof(char)) < 0) {
 				perror("write");
 				break;
 			}
