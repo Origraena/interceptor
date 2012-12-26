@@ -1,6 +1,10 @@
 #ifndef INTERCEPTOR_H_
 #define INTERCEPTOR_H_
 
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -26,6 +30,10 @@ int popen2(const char* cmd, int* fd_in, int* fd_out);
  * both for writing and reading to and from the command.
  */
 int ptyopen(const char* cmd, int* fd);
+
+#ifdef __cplusplus
+	}
+#endif
 
 #endif // INTERCEPTOR_H_
 
