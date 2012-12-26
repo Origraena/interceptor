@@ -5,4 +5,7 @@ fi
 if [ -f interceptor2 ]; then
 	rm interceptor2
 fi
+if [ -f ori.log ]; then
+	rm -f ori.log
+fi
 
